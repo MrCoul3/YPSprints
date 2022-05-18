@@ -1,0 +1,29 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@anikin/parcel-transformer-handlebars": "1.0.9",
+    "handlebars": "4.7.7",
+    "parcel": "2.5.0"
+  },
+  "scripts": {
+    "dev": "parcel index.hbs",
+    "build": "parcel build index.hbs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrCoul3/sprint_1.git"
+  },
+  "keywords": [
+    "[]"
+  ],
+  "author": "MrCoul3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrCoul3/sprint_1/issues"
+  },
+  "homepage": "https://github.com/MrCoul3/sprint_1#readme"
+}
