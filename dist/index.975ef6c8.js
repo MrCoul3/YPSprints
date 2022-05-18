@@ -528,7 +528,7 @@ function hmrAcceptRun(bundle, id) {
 },{}],"8lqZg":[function(require,module,exports) {
 var _sum = require("./modules/sum");
 const root = document.querySelector('#root');
-root.textContent = _sum.sum(6, -3).toString();
+root.textContent = _sum.sum(6, -1).toString();
 
 },{"./modules/sum":"88j4g"}],"88j4g":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
