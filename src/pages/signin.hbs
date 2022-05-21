@@ -1,13 +1,13 @@
 ---
 title: "Регистрация"
 inputs: [
-{label: "Почта", type: "email"},
-{label: "Логин", type: "password"},
-{label: "Имя", type: "text"},
-{label: "Фамилия", type: "text"},
-{label: "Телефон", type: "tel"},
-{label: "Пароль", type: "password"},
-{label: "Пароль (еще раз)", type: "password", alert: "Пароли не совпадают"},
+{label: "Почта", type: "email", name: "email"},
+{label: "Логин", type: "text", name: "login"},
+{label: "Имя", type: "text", name: "first_name"},
+{label: "Фамилия", type: "text",  name: "second_name"},
+{label: "Телефон", type: "tel",  name: "phone"},
+{label: "Пароль", type: "password", name: "password"},
+{label: "Пароль (еще раз)", type: "password", alert: "Пароли не совпадают", name: "password"},
 ]
 buttonValue: "Зарегистрироваться"
 css:
@@ -23,7 +23,7 @@ css:
         <div class="form__title">Регистрация</div>
         <div class="form__inputs-container">
             {{#each inputs}}
-                {{> styledInput/styledInput label=this.label type=this.type}}
+                {{> styledInput/styledInput label=this.label type=this.type name=this.name}}
             {{/each}}
         </div>
         <div class="form__plug form__plug--signin"></div>
