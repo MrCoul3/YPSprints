@@ -1,0 +1,17 @@
+---
+title: "Ошибка"
+code: "404"
+info: "Не туда попали"
+css:
+- styles.css
+- errorPage.css
+---
+{{!< layout}}
+
+<div class="wrapper">
+    <div class="page">
+        <div class="page__code">{{code}}</div>
+        <span class="page__info">{{info}}</span>
+    </div>
+    <a class="link" href="/">Назад к чатам</a>
+</div>
