@@ -1,0 +1,12 @@
+.page {
+  text-align: center;
+  color: var(--dark-color);
+  margin-bottom: 69px;
+  &__code {
+    font-size: 40px;
+    font-weight: 500;
+  }
+  &__info {
+    font-size: 20px;
+  }
+}

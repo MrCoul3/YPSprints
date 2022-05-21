@@ -1,0 +1,46 @@
+.form-wrap {
+  &__form {
+    width: 340px;
+    display: flex;
+    padding: 30px;
+    align-items: center;
+    border-radius: 12px;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+  }
+}
+
+.form {
+  &__title {
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  &__submit-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+  &__plug {
+    &--login {
+      height: 159px;
+
+    }
+    &--signin {
+      height: 52px;
+    }
+
+  }
+  &__inputs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
