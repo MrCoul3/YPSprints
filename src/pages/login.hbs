@@ -18,12 +18,12 @@ css:
         <div class="form__title">Вход</div>
         <div class="form__inputs-container">
             {{#each inputs}}
-                {{> styledInput/styledInput label=this.label type=this.type name=this.name}}
+                {{> styledInput label=this.label type=this.type name=this.name}}
             {{/each}}
         </div>
         <div class="form__plug form__plug--login"></div>
         <div class="form__submit-container">
-            {{> button/button classes="btn btn__blue btn__login" value=buttonValue}}
+            {{> button classes="btn btn__blue btn__login" value=buttonValue}}
             <a class="link" href="signin.hbs">Нет аккаунта?</a>
         </div>
     </div>

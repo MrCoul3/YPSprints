@@ -1,7 +1,16 @@
 ---
+title: "Чат"
+css:
+- styles.css
+- chatList.css
+- search.css
 ---
 {{!< layout}}
 <body>
-    <a href="login.hbs"> login</a>
-    <a href="errorPage.hbs"> error</a>
+  <!--  <a href="login.hbs"> login</a>
+    <a href="errorPage.hbs"> error</a>-->
+  <div class="main-chat-container">
+      {{>chatList}}
+      {{>chatArea}}
+  </div>
 </body>

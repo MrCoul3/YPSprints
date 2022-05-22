@@ -1,0 +1,17 @@
+.profile-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-container-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.profileData {
+  width: 510px;
+  margin: 60px 0;
+}
