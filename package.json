@@ -13,7 +13,8 @@
   },
   "scripts": {
     "build": "parcel build src/pages/index.hbs --no-cache --public-url ./",
-    "start": "parcel src/pages/index.hbs --no-cache && parcel watch ./*"
+    "start": "parcel src/pages/index.hbs --no-cache && parcel watch ./*",
+    "dev": "parcel src/pages/index.hbs"
   },
   "repository": {
     "type": "git",

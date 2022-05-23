@@ -3,6 +3,8 @@
   --gray-color: #999999;
   --red-color: #FF2F2F;
   --dark-color: #1E1E1E;
+  --light-gray-color: #EFEFEF;
+  --backgroud-color: #E4EDFD;
 }
 
 * {
@@ -13,7 +15,7 @@
 
 .wrapper {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,3 +31,11 @@
   color: var(--blue-color);
 }
 
+.main-chat-container {
+  display: flex;
+}
+
+input {
+  outline: none;
+  border: none;
+}

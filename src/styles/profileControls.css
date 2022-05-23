@@ -1,0 +1,19 @@
+.controls {
+  width: 510px;
+
+  &__element {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light-gray-color);
+  }
+
+  &__link {
+    font-size: 13px;
+
+    &--exit {
+      color: var(--red-color);
+    }
+  }
+}

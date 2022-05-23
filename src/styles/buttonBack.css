@@ -1,0 +1,12 @@
+.button-back {
+  width: 64px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #EAEAEA;
+}
+
+.button-back:hover {
+  background: var(--backgroud-color);
+}

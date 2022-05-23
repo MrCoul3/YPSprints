@@ -1,5 +1,6 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8" />
     {{#each css}}
@@ -12,5 +13,9 @@
 </head>
 <body>
     {{{body}}}
+    {{#each js}}
+        <script src="../{{this}}" type="module"></script>
+    {{/each}}
 </body>
+
 </html>

@@ -1,7 +1,32 @@
 ---
+title: "Авторизация"
+inputs: [
+{label: "Логин", type: "text", alert: "Неверный логин", name: "login"},
+{label: "Пароль", type: "password", name: "password"}
+]
+buttonValue: "Авторизоваться"
+css:
+- signForm.css
+- styles.css
+- button.css
+- styledInput.css
+js:
+- index.js
 ---
 {{!< layout}}
-<body>
-    <a href="login.hbs"> login</a>
-    <a href="errorPage.hbs"> error</a>
-</body>
+<div class="form-wrap wrapper">
+    <div class="form-wrap__form form">
+        <div class="form__title">Вход</div>
+        <div class="form__inputs-container">
+            {{#each inputs}}
+                {{> styledInput label=this.label type=this.type name=this.name}}
+            {{/each}}
+        </div>
+        <div class="form__plug form__plug--login"></div>
+        <div class="form__submit-container">
+            {{> button classes="btn btn__blue btn__login link" value=buttonValue link="chat.hbs"}}
+            <a class="link" href="signin.hbs">Нет аккаунта?</a>
+        </div>
+    </div>
+</div>
+
