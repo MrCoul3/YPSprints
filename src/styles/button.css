@@ -12,6 +12,10 @@
   &__blue {
     background: var(--blue-color);;
   }
+  &__login {
+    width: 280px;
+
+  }
   &:active {
     box-shadow: inset 0 0 5px 2px rgba(0, 0, 0, 0.2);
   }
