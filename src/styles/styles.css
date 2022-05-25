@@ -1,0 +1,41 @@
+:root {
+  --blue-color: #3369F3;
+  --gray-color: #999999;
+  --red-color: #FF2F2F;
+  --dark-color: #1E1E1E;
+  --light-gray-color: #EFEFEF;
+  --backgroud-color: #E4EDFD;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 11px;
+  color: var(--blue-color);
+}
+
+.main-chat-container {
+  display: flex;
+}
+
+input {
+  outline: none;
+  border: none;
+}

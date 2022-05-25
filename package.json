@@ -2,16 +2,24 @@
   "name": "test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "dependencies": {},
+  "engines": {
+    "node": "16.15.0",
+    "npm": "8.10.10"
+  },
   "devDependencies": {
     "@anikin/parcel-transformer-handlebars": "1.0.9",
+    "express": "^4.18.1",
     "handlebars": "4.7.7",
-    "parcel": "2.5.0"
+    "lodash": "^4.17.21",
+    "parcel": "2.5.0",
+    "postcss": "^8.4.14",
+    "postcss-css-variables": "^0.18.0",
+    "postcss-nested": "^5.0.6"
   },
   "scripts": {
-    "dev": "parcel index.hbs",
-    "build": "parcel build index.hbs"
+    "build": "parcel build src/pages/index.hbs --no-cache --public-url ./",
+    "start": "parcel src/pages/index.hbs --no-cache && parcel watch ./*",
+    "dev": "parcel src/pages/index.hbs"
   },
   "repository": {
     "type": "git",

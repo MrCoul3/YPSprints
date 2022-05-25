@@ -1,0 +1,32 @@
+---
+title: "Авторизация"
+dataList: [
+{name: "Почта", placeholder: "pochta@yandex.ru", type: "email"},
+{name: "Логин", placeholder: "ivanivanov", type: "text"},
+{name: "Имя", placeholder: "Иван", type: "text"},
+{name: "Фамилия", placeholder: "Иванов", type: "text"},
+{name: "Имя в чате", placeholder: "Иван", type: "text"},
+{name: "Телефон", placeholder: "+7 (909) 967 30 30", type: "tel"},
+]
+css:
+- styles.css
+- buttonBack.css
+- avatar.css
+- profile.css
+- profileDataElement.css
+- button.css
+---
+{{!< layout}}
+
+<div class="profile-container">
+    {{>buttonBack}}
+    <div class="profile-container-content">
+        {{>avatar}}
+        <div class="profileData">
+            {{#each dataList}}
+                {{>profileDataElement mode="enabled"}}
+            {{/each}}
+        </div>
+        {{> button classes="btn btn__blue btn__save" value="Сохранить"}}
+    </div>
+</div>
