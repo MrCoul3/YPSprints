@@ -15,11 +15,12 @@ css:
 - styles.css
 - button.css
 - styledInput.css
+js:
+- index.js
 ---
 {{!< layout}}
-
-<div class="form-wrap wrapper">
-    <div class="form-wrap__form form">
+<section class="form-wrap wrapper">
+    <form class="form-wrap__form form">
         <div class="form__title">Регистрация</div>
         <div class="form__inputs-container">
             {{#each inputs}}
@@ -31,5 +32,5 @@ css:
             {{> button classes="btn btn__blue btn__login link" value=buttonValue link="chat.hbs"}}
             <a class="link" href="index.hbs">Войти</a>
         </div>
-    </div>
-</div>
+    </form>
+</section>
