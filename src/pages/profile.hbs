@@ -15,12 +15,13 @@ css:
 - profile.css
 - profileDataElement.css
 - profileControls.css
+js:
+- profile.js
 ---
 {{!< layout}}
 
-<div class="profile-container">
+<section class="profile-container">
     {{>buttonBack}}
-
     <div class="profile-container-content">
         {{>avatar}}
         <div class="profileData">
@@ -30,4 +31,4 @@ css:
         </div>
         {{>profileControls}}
     </div>
-</div>
+</section>
