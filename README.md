@@ -27,7 +27,7 @@ npm start
 To create a production build:
 
 ```sh
-npm run build-prod
+npm run build
 ```
 
 ## Running
