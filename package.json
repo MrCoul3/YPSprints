@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MrCoul3/sprint_1.git"
+    "url": "git+https://github.com/MrCoul3/YPSprints.git"
   },
   "keywords": [
     "[]"
@@ -39,7 +39,7 @@
   "author": "MrCoul3",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MrCoul3/sprint_1/issues"
+    "url": "https://github.com/MrCoul3/YPSprints/issues"
   },
-  "homepage": "https://github.com/MrCoul3/sprint_1#readme"
+  "homepage": "https://github.com/MrCoul3/YPSprints#readme"
 }
