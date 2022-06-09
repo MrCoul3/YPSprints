@@ -7,7 +7,9 @@ export class Login extends Block {
         super({...props});
     }
 
-    render(): string {
-        return super.render();
+    render(): any {
+       return `
+       sadasd
+       `
     }
 }

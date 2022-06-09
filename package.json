@@ -23,11 +23,12 @@
     "postcss": "8.4.14",
     "postcss-css-variables": "0.18.0",
     "postcss-nested": "5.0.6",
+    "stylelint": "14.8.5",
     "typescript": "4.7.2"
   },
   "scripts": {
     "build": "parcel build src/pages/index.hbs --no-cache --public-url ./",
-    "start": "parcel src/pages/index.hbs -p 3000 --no-cache && parcel watch ./*",
+    "start": "parcel src/index.html -p 3000 --no-source-maps",
     "server": "node ./server.js"
   },
   "alias": {
