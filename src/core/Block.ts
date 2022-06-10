@@ -1,13 +1,11 @@
-import { nanoid } from 'nanoid';
-import Handlebars from 'handlebars';
-// eslint-disable-next-line import/extensions,import/no-unresolved
 import EventBus from './EventBus';
+import {nanoid} from 'nanoid';
+import Handlebars from 'handlebars';
 
 interface BlockMeta<P = any> {
   props: P;
 }
 
-// eslint-disable-next-line no-undef
 type Events = Values<typeof Block.EVENTS>;
 
 export default class Block<P = any> {
@@ -19,20 +17,15 @@ export default class Block<P = any> {
   } as const;
 
   public id = nanoid(6);
-
   private readonly _meta: BlockMeta;
 
-  // eslint-disable-next-line no-undef
   protected _element: Nullable<HTMLElement> = null;
-
   protected readonly props: P;
-
   protected children: {[id: string]: Block} = {};
 
   eventBus: () => EventBus<Events>;
 
   protected state: any = {};
-
   protected refs: {[key: string]: HTMLElement} = {};
 
   public constructor(props?: P) {
@@ -42,7 +35,7 @@ export default class Block<P = any> {
       props,
     };
 
-    this.getStateFromProps(props);
+    this.getStateFromProps(props)
 
     this.props = this._makePropsProxy(props || {} as P);
     this.state = this._makePropsProxy(this.state);
@@ -127,26 +120,22 @@ export default class Block<P = any> {
 
   protected render(): string {
     return '';
-  }
+  };
 
   getContent(): HTMLElement {
     // Хак, чтобы вызвать CDM только после добавления в DOM
     if (this.element?.parentNode?.nodeType === Node.DOCUMENT_FRAGMENT_NODE) {
       setTimeout(() => {
-        if (this.element?.parentNode?.nodeType !== Node.DOCUMENT_FRAGMENT_NODE) {
+        if (this.element?.parentNode?.nodeType !==  Node.DOCUMENT_FRAGMENT_NODE ) {
           this.eventBus().emit(Block.EVENTS.FLOW_CDM);
         }
-      }, 100);
+      }, 100)
     }
-
     return this.element!;
   }
 
   _makePropsProxy(props: any): any {
-    // Можно и так передать this
-    // Такой способ больше не применяется с приходом ES6+
     const self = this;
-
     return new Proxy(props as unknown as object, {
       get(target: Record<string, unknown>, prop: string) {
         const value = target[prop];
@@ -157,7 +146,7 @@ export default class Block<P = any> {
 
         // Запускаем обновление компоненты
         // Плохой cloneDeep, в след итерации нужно заставлять добавлять cloneDeep им самим
-        self.eventBus().emit(Block.EVENTS.FLOW_CDU, { ...target }, target);
+        self.eventBus().emit(Block.EVENTS.FLOW_CDU, {...target}, target);
         return true;
       },
       deleteProperty() {
@@ -171,27 +160,26 @@ export default class Block<P = any> {
   }
 
   _removeEvents() {
-    const { events } = this.props as any;
+    const events: Record<string, () => void> = (this.props as any).events;
 
     if (!events || !this._element) {
       return;
     }
 
+
     Object.entries(events).forEach(([event, listener]) => {
-      // @ts-ignore
       this._element!.removeEventListener(event, listener);
     });
   }
 
   _addEvents() {
-    const { events } = this.props as any;
+    const events: Record<string, () => void> = (this.props as any).events;
 
     if (!events) {
       return;
     }
 
     Object.entries(events).forEach(([event, listener]) => {
-      // @ts-ignore
       this._element!.addEventListener(event, listener);
     });
   }
@@ -203,9 +191,7 @@ export default class Block<P = any> {
      * Рендерим шаблон
      */
     const template = Handlebars.compile(this.render());
-    fragment.innerHTML = template({
-      ...this.state, ...this.props, children: this.children, refs: this.refs,
-    });
+    fragment.innerHTML = template({ ...this.state, ...this.props, children: this.children, refs: this.refs });
 
     /**
      * Заменяем заглушки на компоненты
@@ -243,6 +229,7 @@ export default class Block<P = any> {
      */
     return fragment.content;
   }
+
 
   show() {
     this.getContent().style.display = 'block';

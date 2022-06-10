@@ -1,15 +1,23 @@
 import Block from 'core/Block';
 
-interface IProps {}
+import './login.css';
+
+interface IProps {
+
+}
 
 export class Login extends Block {
-    constructor(props: IProps) {
-        super({...props});
+    constructor() {
+        super();
     }
 
-    render(): any {
-       return `
-       sadasd
-       `
+    render() {
+        // language=hbs
+        return `
+            {{#Layout name="Onboarding" }}
+                {{{Button classes="btn btn__blue btn__login link" text="Login"}}}
+            {{/Layout}}
+
+        `;
     }
 }
