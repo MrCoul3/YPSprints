@@ -2,12 +2,12 @@ import {Block} from "../../core";
 import './styledInput.css';
 
 interface IInputProps {
-    onChange?: () => void;
     label: string;
     name: string;
     alert: string;
     value: string;
     placeholder: string;
+    onChange?: () => void;
     type?: 'text' | 'password' | 'email';
 }
 
@@ -26,6 +26,7 @@ export class Input extends Block {
                        type="{{type}}" 
                        placeholder="{{placeholder}}" 
                        value="{{value}}"
+                       oninput="{{onChange}}"
                 >
                 <span class="styled-input__alert">{{alert}}</span>
             </div>

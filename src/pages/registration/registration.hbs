@@ -1,0 +1,34 @@
+---
+title: "Регистрация"
+inputs: [
+{label: "Почта", type: "email", name: "email"},
+{label: "Логин", type: "text", name: "login"},
+{label: "Имя", type: "text", name: "first_name"},
+{label: "Фамилия", type: "text",  name: "second_name"},
+{label: "Телефон", type: "tel",  name: "phone"},
+{label: "Пароль", type: "password", name: "password"},
+{label: "Пароль (еще раз)", type: "password", alert: "Пароли не совпадают", name: "password"},
+]
+buttonValue: "Зарегистрироваться"
+css:
+- signForm.css
+- styles.css
+- button.css
+- styledInput.css
+---
+{{!< layout}}
+<section class="form-wrap wrapper">
+    <form class="form-wrap__form form">
+        <div class="form__title">Регистрация</div>
+        <div class="form__inputs-container">
+            {{#each inputs}}
+                {{> styledInput label=this.label type=this.type name=this.name}}
+            {{/each}}
+        </div>
+        <div class="form__plug form__plug--signin"></div>
+        <div class="form__submit-container">
+            {{> button classes="btn btn__blue btn__login link" value=buttonValue link="chat.hbs"}}
+            <a class="link" href="index.hbs">Войти</a>
+        </div>
+    </form>
+</section>

@@ -1,12 +1,15 @@
 import Block from 'core/Block';
 
-import './login.css';
+import './registration.css';
 
 interface IProps {
-
+    inputs: Array<{label: string; type: string, name: string, placeholder: string, alert?: string}>
 }
 
-export class Login extends Block {
+export class Registration extends Block {
+    constructor({inputs}: IProps ) {
+        super({inputs})
+    }
 
     protected validation = (event: any) => {
         const loginData = {
@@ -82,13 +85,15 @@ export class Login extends Block {
                 password: '',
             },
             onLogin: (event: any) => {
-                this.validation(event);
+                console.log('aas')
+                // this.validation(event);
                 if (Object.values(this.state.errors).every(err => err === '')) {
-                    console.log('login request')
+                    console.log('register request')
                 }
             },
             onInput: (event: any) => {
-                this.validation(event);
+                console.log('aas')
+                // this.validation(event);
             }
         }
     }
@@ -98,36 +103,26 @@ export class Login extends Block {
         const {errors, values} = this.state;
         // language=hbs
         return `
-            {{#Layout name="Login" }}
+           
+            {{#Layout name="Registration" }}
                 <form class="form-wrap__form form">
-                    <div class="form__title">Вход</div>
+                    <div class="form__title">Регистрация</div>
                     <div class="form__inputs-container">
-                        {{{Input
-                                value="${values.login}"
-                                name="login"
-                                alert="${errors.login}"
-                                ref="login"
-                                label="Логин"
-                                type="text"
-                                placeholder="login"
-                                onChange=onInput
-
-                        }}}
-                        {{{Input
-                                value="${values.password}"
-                                alert="${errors.password}"
-                                ref="password"
-                                label="Пароль"
-                                type="password"
-                                placeholder="password"
-                                onChange=onInput
-                                
-                        }}}
+                        {{#each inputs}}
+                                {{{Input
+                                    name="{{name}}"
+                                    ref="{{name}}"
+                                    label="{{label}}"
+                                    type="{{type}}"
+                                    placeholder="{{placeholder}}"
+                                    onChange=onInput
+                                 }}}
+                        {{/each}}
                     </div>
-                    <div class="form__plug form__plug--login"></div>
+                    <div class="form__plug form__plug--signin"></div>
                     <div class="form__submit-container">
-                        {{{Button onClick=onLogin classes="btn btn__blue btn__login link" text="Registration"}}}
-                        <a href="signin.html" class="link">Нет аккаунта?</a>
+                        {{{Button onClick=onLogin classes="btn btn__blue btn__login link" text="Регистрация"}}}
+                        <a href="login.html" onclick="" class="link">Нет аккаунта?</a>
                     </div>
                 </form>
             {{/Layout}}
