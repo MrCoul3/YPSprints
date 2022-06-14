@@ -1,6 +1,6 @@
 require("babel-core/register");
 
-import { renderDOM, registerComponent }  from './core';
+import {renderDOM, registerComponent} from './core';
 import './app.css';
 
 import Login from './pages/login';
@@ -16,15 +16,17 @@ registerComponent(Input);
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    // @ts-ignore
     const App = new Registration({
         inputs: [
-            {placeholder: "Почта",label: "Почта", type: "email", name: "email"},
-            {placeholder: "Логин",label: "Логин", type: "text", name: "login"},
-            {placeholder: "Имя",label: "Имя", type: "text", name: "first_name"},
-            {placeholder: "Фамилия",label: "Фамилия", type: "text",  name: "second_name"},
-            {placeholder: "Телефон",label: "Телефон", type: "tel",  name: "phone"},
-            {placeholder: "Пароль",label: "Пароль", type: "password", name: "password"},
-            {placeholder: "Пароль (еще раз)",label: "Пароль (еще раз)", type: "password", name: "password"},
+            {placeholder: "Почта", label: "Почта", type: "email", name: "email", func: function () {
+                    console.log('func')}},
+            {placeholder: "Логин", label: "Логин", type: "text", name: "login"},
+            {placeholder: "Имя", label: "Имя", type: "text", name: "first_name"},
+            {placeholder: "Фамилия", label: "Фамилия", type: "text", name: "second_name"},
+            {placeholder: "Телефон", label: "Телефон", type: "tel", name: "phone"},
+            {placeholder: "Пароль", label: "Пароль", type: "password", name: "password"},
+            {placeholder: "Пароль (еще раз)", label: "Пароль (еще раз)", type: "password", name: "password"},
         ]
     });
     // const App = new Login();

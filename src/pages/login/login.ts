@@ -111,7 +111,6 @@ export class Login extends Block {
                                 type="text"
                                 placeholder="login"
                                 onChange=onInput
-
                         }}}
                         {{{Input
                                 value="${values.password}"
@@ -121,7 +120,6 @@ export class Login extends Block {
                                 type="password"
                                 placeholder="password"
                                 onChange=onInput
-                                
                         }}}
                     </div>
                     <div class="form__plug form__plug--login"></div>

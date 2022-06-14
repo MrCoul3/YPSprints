@@ -26,7 +26,6 @@ export class Input extends Block {
                        type="{{type}}" 
                        placeholder="{{placeholder}}" 
                        value="{{value}}"
-                       oninput="{{onChange}}"
                 >
                 <span class="styled-input__alert">{{alert}}</span>
             </div>

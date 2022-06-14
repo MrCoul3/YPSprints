@@ -3,7 +3,7 @@ import Block from 'core/Block';
 import './registration.css';
 
 interface IProps {
-    inputs: Array<{label: string; type: string, name: string, placeholder: string, alert?: string}>
+    inputs: Array<{ label: string; type: string, name: string, placeholder: string, func?: () => {}, alert?: string}>
 }
 
 export class Registration extends Block {
@@ -92,7 +92,6 @@ export class Registration extends Block {
                 }
             },
             onInput: (event: any) => {
-                console.log('aas')
                 // this.validation(event);
             }
         }
@@ -103,7 +102,6 @@ export class Registration extends Block {
         const {errors, values} = this.state;
         // language=hbs
         return `
-           
             {{#Layout name="Registration" }}
                 <form class="form-wrap__form form">
                     <div class="form__title">Регистрация</div>
@@ -115,7 +113,7 @@ export class Registration extends Block {
                                     label="{{label}}"
                                     type="{{type}}"
                                     placeholder="{{placeholder}}"
-                                    onChange=onInput
+                                    onChange="{{func}}"
                                  }}}
                         {{/each}}
                     </div>
